@@ -11,6 +11,11 @@
   width: 3rem;
   height: 3rem;
   border-radius: 9999px;
+  transition: filter 0.2s;
+}
+
+.tweet img:hover {
+  filter: brightness(0.95);
 }
 
 .tweet .tweet-content {
