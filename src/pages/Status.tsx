@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, KeyboardEvent, useState } from 'react';
 
 import { Header } from '../components/Header';
 import { Tweet } from '../components/Tweet';
@@ -23,6 +23,15 @@ export function Status() {
     }
   }
 
+  function handleHotkeySubmit(event: KeyboardEvent) {
+    if (event.key === 'Enter' && (event.ctrlKey || event.metaKey)) {
+      if (newAnswer !== '') {
+        setAnswers((prevState) => [newAnswer, ...prevState]);
+        setNewAnswer('');
+      }
+    }
+  }
+
   return (
     <main className="status">
       <Header title="Home" />
@@ -37,6 +46,7 @@ export function Status() {
           <textarea
             value={newAnswer}
             onChange={(event) => setNewAnswer(event.target.value)}
+            onKeyDown={handleHotkeySubmit}
             id="tweet"
             placeholder="Tweet your answer"
           />
