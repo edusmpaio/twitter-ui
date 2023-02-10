@@ -44,7 +44,7 @@ export function Timeline() {
             onChange={(event) => setNewTweet(event.target.value)}
             onKeyDown={handleHotkeySubmit}
             id="tweet"
-            placeholder="What's happening"
+            placeholder="What's happening?"
           />
         </label>
 
