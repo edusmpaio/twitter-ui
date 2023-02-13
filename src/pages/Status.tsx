@@ -4,6 +4,7 @@ import { Header } from '../components/Header';
 import { Tweet } from '../components/Tweet';
 import { Separator } from '../components/Separator';
 
+import avatar from '../assets/avatar.svg';
 import './Status.css';
 import { PaperPlaneRight } from 'phosphor-react';
 
@@ -43,7 +44,7 @@ export function Status() {
 
       <form onSubmit={createNewAnswer} className="answer-tweet-form">
         <label htmlFor="tweet">
-          <img src="https://github.com/edusmpaio.png" alt="Eduardo Sampaio" />
+          <img src={avatar} alt="Ícone do usuário" />
           <textarea
             value={newAnswer}
             onChange={(event) => setNewAnswer(event.target.value)}

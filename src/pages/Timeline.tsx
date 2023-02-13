@@ -4,6 +4,7 @@ import { Header } from '../components/Header';
 import { Separator } from '../components/Separator';
 import { Tweet } from '../components/Tweet';
 
+import avatar from '../assets/avatar.svg';
 import './Timeline.css';
 
 export function Timeline() {
@@ -38,7 +39,7 @@ export function Timeline() {
 
       <form onSubmit={createNewTweet} className="new-tweet-form">
         <label htmlFor="tweet">
-          <img src="https://github.com/edusmpaio.png" alt="Eduardo Sampaio" />
+          <img src={avatar} alt="Ícone do usuário" />
           <textarea
             value={newTweet}
             onChange={(event) => setNewTweet(event.target.value)}
